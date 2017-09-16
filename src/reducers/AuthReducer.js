@@ -3,8 +3,8 @@ const defaultState = {
 	user: {},
 	token: '',
 }
-const authReducer = (state = defaultState, action) => {
+const AuthReducer = (state = defaultState, action) => {
 	return state;
 }
 
-export default authReducer;
+export default AuthReducer;
