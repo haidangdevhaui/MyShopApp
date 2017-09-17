@@ -1,17 +1,31 @@
 import React, { Component } from 'react'
-import { View, Text, Button, StyleSheet } from 'react-native'
+import { NavigationActions } from 'react-navigation'
+import { View, Text, Button } from 'native-base'
 import { connect } from 'react-redux'
-import FontAwesome, { Icons } from 'react-native-fontawesome'
+import Styles from '../styles/App'
+
+import { goToScreen } from '../actions/NavigationAction'
 
 class LandingScreen extends Component {
+    static navigationOptions = { 
+        title: false, 
+        header: null,
+    }
+
     render() {
         return (
             <View style={{justifyContent: 'center', flex: 1}}>
                 <Text style={{textAlign: 'center'}}>Landing</Text>
-                 <Button title="Đăng nhập"/> 
+                <Button full warning style={Styles.goToLoginButton} onPress={() => this.props.goToScreen('Login')}>
+                    <Text>Đăng nhập</Text>
+                </Button>
             </View>
         )
     }
 }
 
-export default connect()(LandingScreen);
+const mapStateToProps = state => ({
+    navigation: state.navigation,
+});
+
+export default connect(mapStateToProps, { goToScreen })(LandingScreen);

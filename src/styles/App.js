@@ -1,4 +1,7 @@
-export default {
+import Color from '../configs/Color'
+import { StyleSheet } from 'react-native'
+
+export default StyleSheet.create({
     loginScreen: {
         flex: 1,
         justifyContent: 'center',
@@ -8,9 +11,9 @@ export default {
     loginForm: {
         
     },
-    registerLink: {
-        color: '#FFF',
-        textAlign: 'center',
-        marginTop: 20
+    goToLoginButton: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
     }
-};
+});

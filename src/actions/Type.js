@@ -1,0 +1,6 @@
+export const NAVIGATE = 'NAVIGATE'
+export const BACK_SCREEN = 'BACK_SCREEN'
+export const LOGIN = 'LOGIN'
+export const REGISTER = 'REGISTER'
+export const LOGOUT = 'LOGOUT'
+export const STORE_AUTHENTICATION = 'STORE_AUTHENTICATION'
