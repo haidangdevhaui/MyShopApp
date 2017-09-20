@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Container, Header, Content, Form, Item, Input, Label, Icon, Button, Text } from 'native-base'
+import { AsyncStorage } from 'react-native'
+import { Container, Content, Item, Input, Icon, Button, Text } from 'native-base'
 import FormStyle from '../../../styles/Form'
 import AppStyle from '../../../styles/App'
 
@@ -7,8 +8,22 @@ export default class LoginForm extends Component {
     constructor(props){
         super(props);
         this.state = {
-            userName: '',
-            passWord: ''
+            email: '',
+            password: ''
+        }
+    }
+
+    /**
+     * login event
+     */
+    async login() {
+        let { data } = await this.props.login(this.state);
+
+        if (data.success) {
+            let { api_token } = data.data;
+            this.props.store(api_token);
+            this.props.sync();
+            // this.props.goToScreen('Store');
         }
     }
 
@@ -18,13 +33,13 @@ export default class LoginForm extends Component {
                 <Content>
                     <Item>
                         <Icon name='mail'/>
-                        <Input placeholder='Email'/>
+                        <Input name="email" placeholder='Email' onChangeText={(text) => this.setState({email: text})}/>
                     </Item>
                     <Item>
                         <Icon name='key'/>
-                        <Input placeholder='Mật khẩu'/>
+                        <Input password name="password" placeholder='Mật khẩu' onChangeText={(text) => this.setState({password: text})}/>
                     </Item>
-                    <Button block warning style={{marginTop: 10}} onPress={() => this.props.onLogin(this.state)}>
+                    <Button block warning style={{marginTop: 10}} onPress={() => this.login()}>
                         <Text>Đăng nhập</Text>
                     </Button>
                     <Text style={{textAlign: 'center', marginTop: 30}}>Quên mật khẩu?</Text>

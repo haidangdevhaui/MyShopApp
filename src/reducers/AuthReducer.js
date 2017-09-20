@@ -1,4 +1,5 @@
-import { LOGIN, LOGOUT, REGISTER, STORE_AUTHENTICATION } from '../actions/Type'
+import { LOGIN, LOGOUT, REGISTER, STORE_AUTHENTICATION, SYNC_STORAGE_WITH_REDUCER } from '../actions/Type'
+import jwtDecode from 'jwt-decode'
 
 const defaultState = {
 	isAuthenticate: false,
@@ -7,8 +8,13 @@ const defaultState = {
 }
 const AuthReducer = (state = defaultState, action) => {
 	switch (action.type) {
-		case STORE_AUTHENTICATION:
-			
+		case SYNC_STORAGE_WITH_REDUCER:
+			return {
+				...state,
+				isAuthenticate: true,
+				user: action.data.user,
+				token: action.data.token
+			}
 			break;
 		case LOGOUT:
 			

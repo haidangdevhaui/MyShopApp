@@ -4,8 +4,8 @@ import LoginForm from './LoginForm'
 import AppStyle from '../../../styles/App'
 import { connect } from 'react-redux'
 import { Icon } from 'native-base'
-import { goToScreen, backPrevScreen } from '../../../actions/NavigationAction'
-import { login } from '../../../actions/AuthAction'
+import { goToScreen } from '../../../actions/NavigationAction'
+import { login, store, sync } from '../../../actions/AuthAction'
 import { NAVIGATE } from '../../../actions/Type'
 import { Container, Header, Content, Button, Text, View } from 'native-base'
 import Color from '../../../configs/Color'
@@ -20,7 +20,7 @@ class LoginScreen extends Component {
         return (
             <View style={{flex: 1}}>
                 <View style={{height: 250, backgroundColor: '#FFF', padding: 10}}>
-                    <LoginForm onLogin={this.props.login} onGoToScreen={this.props.goToScreen}/>
+                    <LoginForm login={this.props.login} goToScreen={this.props.goToScreen} store={this.props.store} sync={this.props.sync}/>
                 </View>
                 <View style={{flex: 1, backgroundColor: '#f9f2ef', justifyContent: 'center'}}>
                     <Text style={{textAlign: 'center'}}>Bạn chưa có tài khoản? 
@@ -32,4 +32,13 @@ class LoginScreen extends Component {
     }
 }
 
-export default connect(null, { goToScreen, backPrevScreen, login })(LoginScreen);
+export default connect((state) => {
+    return {
+        auth: state.auth
+    }
+}, { 
+    goToScreen, 
+    login,
+    store,
+    sync
+})(LoginScreen);

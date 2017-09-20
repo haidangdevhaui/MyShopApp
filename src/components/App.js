@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { addNavigationHelpers } from 'react-navigation';
-import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { AppNavigator, LandingNavigator } from '../AppRoutes';
 
 class App extends Component {
     render() {
+
+        console.log(this.props.auth);
+        
         return (
-            <LandingNavigator navigation={addNavigationHelpers({
+            !this.props.auth.isAuthenticate 
+            ? <AppNavigator navigation={addNavigationHelpers({
                 dispatch: this.props.dispatch,
-                state: this.props.land,
+                state:  this.props.nav
+            })} />
+            : <LandingNavigator navigation={addNavigationHelpers({
+                dispatch: this.props.dispatch,
+                state:  this.props.land
             })} />
         )
     }
@@ -17,7 +24,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
     nav: state.nav,
-    land: state.land
+    land: state.land,
+    auth: state.auth
 });
 
 export default connect(mapStateToProps)(App);

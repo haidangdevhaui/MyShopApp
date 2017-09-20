@@ -17,7 +17,7 @@ const TabReducer = (state = initialState, action) => {
             return AppNavigator.router.getStateForAction(NavigationActions.back(), state);
             break;
         default:
-            return AppNavigator.router.getStateForAction(action, state) || state;
+            return state;
             break;
     }
 };

@@ -12,17 +12,17 @@ import RegisterScreen from './components/auth/register/RegisterScreen'
 
 import Color from './configs/Color';
 
-// export const AppStackNavigator = StackNavigator({
-//     Home: { screen: StoreScreen },
-//     Category: { screen: CategoryScreen },
-//     Product: { screen: ProductScreen },
-// }, {
-//     navigationOptions: {
-//         headerTitleStyle: {
-//             fontWeight: 'normal'
-//         }
-//     }
-// });
+export const AppStackNavigator = StackNavigator({
+    Home: { screen: StoreScreen },
+    Category: { screen: CategoryScreen },
+    Product: { screen: ProductScreen },
+}, {
+    navigationOptions: {
+        headerTitleStyle: {
+            fontWeight: 'normal'
+        }
+    }
+});
 
 export const LandingNavigator = StackNavigator({
     Landing: { screen: LandingScreen },
