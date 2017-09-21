@@ -1,4 +1,4 @@
-import { TabNavigator, StackNavigator, TabBarBottom } from 'react-navigation'
+import { TabNavigator, StackNavigator, TabBarBottom, DrawerNavigator } from 'react-navigation'
 import { Icon } from 'native-base'
 import StoreScreen from './components/store/StoreScreen'
 import CartScreen from './components/cart/CartScreen'
@@ -10,45 +10,33 @@ import LandingScreen from './components/LandingScreen'
 import LoginScreen from './components/auth/login/LoginScreen'
 import RegisterScreen from './components/auth/register/RegisterScreen'
 
-import Color from './configs/Color';
-
-export const AppStackNavigator = StackNavigator({
-    Home: { screen: StoreScreen },
-    Category: { screen: CategoryScreen },
-    Product: { screen: ProductScreen },
-}, {
-    navigationOptions: {
-        headerTitleStyle: {
-            fontWeight: 'normal'
-        }
-    }
-});
-
-export const LandingNavigator = StackNavigator({
-    Landing: { screen: LandingScreen },
-    Login: { screen: LoginScreen },
-    Register: { screen: RegisterScreen },
-}, {
-    navigationOptions: {
-        headerTitleStyle: {
-            fontWeight: 'normal'
-        },
-    }
-});
-
-export const AppNavigator = TabNavigator({
-    Store: { screen: StoreScreen },
-    Cart: { screen: CartScreen },
-    User: { screen: ProfileScreen },
-},
-{
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: 'bottom',
-    animationEnabled: true,
-    tabBarOptions: {
-        activeTintColor: Color.main,
-        labelStyle: {
-            fontSize: 12
-        },
+export default AppNavigator = DrawerNavigator({
+    Guest: {
+        screen: StackNavigator({
+            Landing: { screen: LandingScreen },
+            Login: { screen: LoginScreen },
+            Register: { screen: RegisterScreen },
+        })
     },
-});
+    Auth: { 
+        screen: TabNavigator({
+            Store: { 
+                screen: StackNavigator({
+                    StoreIndex: { screen: StoreScreen },
+                    Category: { screen: CategoryScreen },
+                    Product: { screen: ProductScreen },
+                }) 
+            },
+            Cart: { 
+                screen: StackNavigator({
+                    CartIndex: { screen: CartScreen }
+                }) 
+            },
+            Profile: { 
+                screen: StackNavigator({
+                    ProfileIndex: { screen: ProfileScreen }
+                }) 
+            }
+        }) 
+    }
+})

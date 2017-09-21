@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { AsyncStorage } from 'react-native'
-import { Container, Content, Item, Input, Icon, Button, Text } from 'native-base'
+import { Container, Content, Item, Input, Icon, Button, Text, Toast } from 'native-base'
 import FormStyle from '../../../styles/Form'
 import AppStyle from '../../../styles/App'
 
@@ -23,7 +23,14 @@ export default class LoginForm extends Component {
             let { api_token } = data.data;
             this.props.store(api_token);
             this.props.sync();
-            // this.props.goToScreen('Store');
+            this.props.goToScreen('StoreIndex');
+        } else {
+            Toast.show({
+                text: data.error_message,
+                type: 'warning',
+                position: 'bottom',
+                buttonText: 'OK'
+            });
         }
     }
 
