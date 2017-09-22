@@ -1,25 +1,36 @@
 import React, { Component } from 'react'
-import { View, Text, Button, StyleSheet } from 'react-native'
+import { 
+    Container, 
+    View, 
+    Text, 
+    Icon, 
+    Header,
+    Left
+ } from 'native-base'
 import { connect } from 'react-redux'
-import FontAwesome, { Icons } from 'react-native-fontawesome'
+import Color from '../../configs/Color'
 
 class StoreScreen extends Component {
     static navigationOptions = {
         tabBarLabel: 'Cửa hàng',
         tabBarIcon: ({ tintColor }) => (
-            <FontAwesome style={{fontSize: 24}}>{Icons.shoppingBag}</FontAwesome>
+            <Icon name="md-appstore" style={{color: tintColor}}/>
         ),
-    }
-
-    goToProduct() {
-        
+        header: false,
     }
 
     render() {
         return (
-            <View style={{justifyContent: 'center', flex: 1}}>
-                <Text style={{textAlign: 'center'}}>Cửa hàng</Text>
-            </View>
+            <Container>
+                <Header style={{backgroundColor: '#FFF' }}>
+                    <Left style={{position: 'absolute', left: 10}}>
+                        <Icon name="md-reorder" onPress={() => this.props.navigation.navigate('DrawerOpen')}/>
+                    </Left>
+                </Header>
+                <View style={{justifyContent: 'center', flex: 1}}>
+                    <Text style={{textAlign: 'center'}}>Cửa hàng</Text>
+                </View>
+            </Container>
         )
     }
 }

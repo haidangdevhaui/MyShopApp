@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Icon } from 'native-base'
 import { connect } from 'react-redux'
-import FontAwesome, { Icons } from 'react-native-fontawesome'
 
 class CartScreen extends Component {
     static navigationOptions = {
+        header: false,
         tabBarLabel: 'Giỏ hàng',
         tabBarIcon: ({ tintColor }) => (
-            <FontAwesome style={{fontSize: 24}}>{Icons.cartArrowDown}</FontAwesome>
+            <Icon name="md-cart" style={{color: tintColor}}/>
         ),
     }
 

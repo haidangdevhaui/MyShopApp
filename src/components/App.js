@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import { addNavigationHelpers } from 'react-navigation';
-import { connect } from 'react-redux';
-import AppNavigator from '../AppRoutes';
+import React, { Component } from 'react'
+import { addNavigationHelpers } from 'react-navigation'
+import { connect } from 'react-redux'
+import { Root, Header } from 'native-base'
+import AppNavigator from '../AppRoutes'
+import Color from '../configs/Color'
 
 class App extends Component {
     
@@ -11,10 +13,12 @@ class App extends Component {
     
     render() {
         return (
-            <AppNavigator navigation={addNavigationHelpers({
-                dispatch: this.props.dispatch,
-                state:  this.props.nav
-            })} />
+            <Root>
+                <AppNavigator navigation={addNavigationHelpers({
+                    dispatch: this.props.dispatch,
+                    state:  this.props.nav
+                })} />
+            </Root>
         )
     }
 }

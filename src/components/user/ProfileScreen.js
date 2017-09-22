@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { View, Text, Button, StyleSheet } from 'react-native'
+import { View, Text, Icon } from 'native-base'
 import { connect } from 'react-redux'
-import FontAwesome, { Icons } from 'react-native-fontawesome'
 
 class ProfileScreen extends Component {
     static navigationOptions = {
+        header: false,
         tabBarLabel: 'Profile',
         tabBarIcon: ({ tintColor }) => (
-            <FontAwesome style={{fontSize: 24}}>{Icons.userCircle}</FontAwesome>
+            <Icon name="md-person" style={{color: tintColor}}/>
         ),
     }
 

@@ -15,5 +15,9 @@ export default StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         width: '100%',
+    },
+    drawerBox: {
+        borderColor: '#434343', 
+        borderWidth: 0.5,
     }
 });

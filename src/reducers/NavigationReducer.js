@@ -2,7 +2,7 @@ import { NavigationActions } from 'react-navigation'
 import AppNavigator from '../AppRoutes';
 import { NAVIGATE, BACK_SCREEN } from '../actions/Type'
 
-const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Login'));
+const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('StoreIndex'));
 
 const NavigationReducer = (state = initialState, action) => {
     switch (action.type) {
