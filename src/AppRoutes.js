@@ -1,8 +1,8 @@
 import React from 'react'
-import { TabNavigator, StackNavigator, TabBarBottom, DrawerNavigator, DrawerItems } from 'react-navigation'
+import { TabNavigator, StackNavigator, TabBarBottom, DrawerNavigator } from 'react-navigation'
 import { Tabs, Tab, Icon, TabHeading, FooterTab } from 'native-base'
 import { Image, DrawerLayoutAndroid } from 'react-native'
-import AppDrawer from './components/element/AppDrawer'
+
 import StoreScreen from './components/store/StoreScreen'
 import CartScreen from './components/cart/CartScreen'
 import CategoryScreen from './components/category/CategoryScreen'
@@ -12,8 +12,10 @@ import ProfileScreen from './components/user/ProfileScreen'
 import LandingScreen from './components/LandingScreen'
 import LoginScreen from './components/auth/login/LoginScreen'
 import RegisterScreen from './components/auth/register/RegisterScreen'
+
 import Color from './configs/Color'
 import Styles from './styles/App'
+import AppDrawer from './components/element/AppDrawer'
 
 export default AppNavigator = DrawerNavigator({
     Guest: {
@@ -55,6 +57,6 @@ export default AppNavigator = DrawerNavigator({
         }) 
     }
 }, {
-    contentComponent: props => <AppDrawer><DrawerItems {...props} /></AppDrawer>,
+    contentComponent: AppDrawer,
     drawerWidth: 220
 })
