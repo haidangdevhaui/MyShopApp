@@ -19,5 +19,13 @@ export default StyleSheet.create({
     drawerBox: {
         borderColor: '#434343', 
         borderWidth: 0.5,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    logo: {
+        marginLeft: -30,
+        width: 130,
+        height: 30,
+        alignSelf: 'center'
     }
 });
