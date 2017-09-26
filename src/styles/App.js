@@ -27,5 +27,10 @@ export default StyleSheet.create({
         width: 130,
         height: 30,
         alignSelf: 'center'
+    },
+    searchBox: {
+        color: 'red', 
+        backgroundColor: '#E8E9EB',
+        borderRadius: 5
     }
 });

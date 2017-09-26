@@ -1,19 +1,36 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Image } from 'react-native'
-import { Header, Left, Icon } from 'native-base'
+import { Header, Left, Icon, Text, Item, Input, Button } from 'native-base'
 import Styles from '../../styles/App'
+import { getRouteName } from '../../helpers/Navigation'
+import Color from '../../configs/Color'
 
-class AppHeader extends Component {    
+class AppHeader extends Component {
+    constructor(props) {
+        super(props)
+    }
+
     render() {
+        let routeName = getRouteName(this.props.nav);
         return (
-            <Header style={{backgroundColor: '#FFF' }}>
-                <Left style={{position: 'absolute', left: 10}}>
-                    <Icon name="md-reorder" onPress={() => this.props.open.navigate('DrawerOpen')}/>
-                </Left>
-                <Image source={require('./images/logo.png')} style={Styles.logo}/>
+            <Header searchBar rounded style={{backgroundColor: Color.main}}>
+                <Item>
+                    <Icon name="ios-search" />
+                    <Input placeholder="Shop" style={Styles.searchBox} placeholderTextColor="red"/>
+                </Item>
+                <Button transparent>
+                    <Text>Search</Text>
+                </Button>
+                <Icon name="ios-cart-outline" style={{ color: 'red', margin: 11, marginRight: 5 }}/>
+                <Icon name="ios-chatbubbles-outline" style={{ color: 'red', margin: 11, marginLeft: 5 }}/>
             </Header>
         );
     }
 }
 
-export default AppHeader
+const mapStateToProps = (state, ownProps) => ({
+    nav: state.nav
+})
+
+export default connect(mapStateToProps)(AppHeader)
