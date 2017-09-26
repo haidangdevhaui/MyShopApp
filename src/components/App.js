@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { Root, View } from 'native-base'
 import AppNavigator from '../AppRoutes'
 import Color from '../configs/Color'
-import Drawer from 'react-native-drawer'
 import AppDrawer from '../components/element/AppDrawer'
 
 class App extends Component {

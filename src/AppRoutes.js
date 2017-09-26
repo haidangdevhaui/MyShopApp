@@ -4,6 +4,7 @@ import { Tabs, Tab, Icon, TabHeading, FooterTab } from 'native-base'
 import { Image, DrawerLayoutAndroid } from 'react-native'
 
 import StoreScreen from './components/store/StoreScreen'
+import FavoriteScreen from './components/favorite/FavoriteScreen'
 import CartScreen from './components/cart/CartScreen'
 import CategoryScreen from './components/category/CategoryScreen'
 import ProductScreen from './components/product/ProductScreen'
@@ -38,6 +39,11 @@ export default AppNavigator = DrawerNavigator({
                 screen: StackNavigator({
                     CartIndex: { screen: CartScreen }
                 }) 
+            },
+            Favorite: {
+                screen: StackNavigator({
+                    FavoriteIndex: { screen: FavoriteScreen }
+                })
             },
             Profile: { 
                 screen: StackNavigator({

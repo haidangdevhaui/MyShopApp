@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 class CartTabIcon extends Component {
     render() {
-        const notifications = [1,2,3];
+        const cart = this.props.cart;
         return (
             <View style={{
             zIndex: 0,
@@ -14,7 +14,7 @@ class CartTabIcon extends Component {
             justifyContent: 'space-around',
             alignItems: 'center'}}>
             <Icon name="md-cart" style={{color: this.props.color}}/>
-            {notifications.length > 0 ?
+            {cart.length > 0 ?
             <View style={{
                 position: 'absolute',
                 top: 1,
@@ -30,4 +30,9 @@ class CartTabIcon extends Component {
     }
 }
 
-export default connect()(CartTabIcon);
+const mapStateToProps = (state, ownProps) => ({
+    cart: state.cart
+})
+
+
+export default connect(mapStateToProps)(CartTabIcon);
