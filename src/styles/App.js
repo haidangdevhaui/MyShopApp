@@ -9,7 +9,7 @@ export default StyleSheet.create({
         padding: 10
     },
     loginForm: {
-        
+
     },
     goToLoginButton: {
         position: 'absolute',
@@ -17,7 +17,7 @@ export default StyleSheet.create({
         width: '100%',
     },
     drawerBox: {
-        borderColor: '#434343', 
+        borderColor: '#434343',
         borderWidth: 0.5,
         justifyContent: 'center',
         alignItems: 'center'
@@ -29,8 +29,23 @@ export default StyleSheet.create({
         alignSelf: 'center'
     },
     searchBox: {
-        color: 'red', 
+        color: 'red',
         backgroundColor: '#E8E9EB',
-        borderRadius: 5
-    }
+        borderRadius: 5,
+        fontFamily: 'OpenSans-Light',
+        fontSize: 13
+    },
+    titleBox: {
+        margin: 10, 
+        fontFamily: 'OpenSans-Light',
+        color: '#000'
+    },
+    viewMore: {
+        fontSize: 11, 
+        color: 'red', 
+        flex: 0.3, 
+        textAlign: 'right', 
+        margin: 10,
+        marginTop: 15
+    },
 });

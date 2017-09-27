@@ -11,7 +11,7 @@ export default class AppDrawer extends Component {
             <Container>
                 <View style={{flex: 1}}>
                     <View style={{height: 150, backgroundColor: Color.drawerTop, alignItems: 'center'}}>
-                        <Thumbnail source={require('../../asset/images/avatar.jpg')} style={{marginTop: 10, borderColor: '#CCC', borderWidth: .5}}/>
+                        {/* <Thumbnail source={require('../../asset/images/avatar.jpg')} style={{marginTop: 10, borderColor: '#CCC', borderWidth: .5}}/> */}
                         <Text style={{color: '#F7F7F7'}}>John Wick</Text>
                         <Text style={{color: '#F7F7F7', fontSize: 11}}>johnwick@mafia.com</Text>
                     </View>

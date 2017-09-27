@@ -18,11 +18,13 @@
     "react-navigation": "^1.0.0-beta.11",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "rn-viewpager": "^1.2.4"
   },
   "devDependencies": {
     "babel-jest": "21.0.2",
     "babel-preset-react-native": "3.0.2",
+    "immutability-helper": "^2.4.0",
     "jest": "21.0.2",
     "react-test-renderer": "16.0.0-alpha.12"
   },
@@ -30,8 +32,8 @@
     "preset": "react-native"
   },
   "rnpm": {
-      "assets": [
-        "./assets/fonts/"
-      ]
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }
