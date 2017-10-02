@@ -29,7 +29,7 @@ export default StyleSheet.create({
         alignSelf: 'center'
     },
     searchBox: {
-        color: 'red',
+        color: '#FB5526',
         backgroundColor: '#E8E9EB',
         borderRadius: 5,
         fontFamily: 'OpenSans-Light',
@@ -41,11 +41,48 @@ export default StyleSheet.create({
         color: '#000'
     },
     viewMore: {
-        fontSize: 11, 
-        color: 'red', 
+        fontSize: 12, 
+        color: '#FB5526', 
         flex: 0.3, 
         textAlign: 'right', 
-        margin: 10,
-        marginTop: 15
+        margin: 5,
+        marginRight: 10
     },
+    flashSaleItem: {
+        width: 90, 
+        height: 110, 
+        margin: 2.5, 
+        flex: 1, 
+        alignItems: 'center',
+        padding: 5
+    },
+    flashTextProgressBar: {
+        color: '#FFF', 
+        fontWeight: 'bold', 
+        fontSize: 11, 
+        position: 'absolute', 
+        top: -2, 
+        left: 5
+    },
+    topProductBox: {
+        height: 150, 
+        backgroundColor: '#FFF', 
+        marginTop: 7, 
+        padding: 3 
+    },
+    productBoxItem: {
+        backgroundColor:'#FFF', 
+        width: 172, 
+        height: 245, 
+        margin: 2.5,
+        alignItems: 'center',
+        padding: 10
+    },
+    productItemImage: {
+        width: 130, 
+        height: 130
+    },
+    productItemName: {
+
+    }
 });

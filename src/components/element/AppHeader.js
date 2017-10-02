@@ -22,8 +22,8 @@ class AppHeader extends Component {
                 <Button transparent>
                     <Text>Search</Text>
                 </Button>
-                <Icon name="ios-cart-outline" style={{ color: 'red', margin: 11, marginRight: 5 }}/>
-                <Icon name="ios-chatbubbles-outline" style={{ color: 'red', margin: 11, marginLeft: 5 }}/>
+                <Icon name="ios-cart-outline" style={{ color: '#FB5526', margin: 11, marginRight: 5 }}/>
+                <Icon name="ios-chatbubbles-outline" style={{ color: '#FB5526', margin: 11, marginLeft: 5 }}/>
             </Header>
         );
     }

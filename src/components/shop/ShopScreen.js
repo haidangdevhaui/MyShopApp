@@ -11,6 +11,7 @@ import SliderBox from '../element/SliderBox'
 import CategoryBox from '../element/CategoryBox'
 import ProductBox from '../element/ProductBox'
 import FlashSaleBox from '../element/FlashSaleBox'
+import TopProductBox from '../element/TopProductBox'
 
 class ShopScreen extends Component {
 
@@ -24,7 +25,7 @@ class ShopScreen extends Component {
     render() {
         return (
             <Container>
-                <ShopHeader />
+                <ShopHeader/>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <SliderBox/>
                     <View style={{height: 100, backgroundColor: '#FFF'}}>
@@ -36,23 +37,11 @@ class ShopScreen extends Component {
                             horizontal={true}
                             showsHorizontalScrollIndicator={false}
                             data={[{key: 1}, {key: 2}, {key: 3}, {key: 4}, {key: 5}, {key: 6}, {key: 7}]}
-                            renderItem={() => <View style={{backgroundColor: 'red', width: 70, height: 60, margin: 2.5}}/>}
+                            renderItem={() => <View style={{backgroundColor: '#FB5526', width: 70, height: 60, margin: 2.5}}/>}
                         />
                     </View>
-                    <FlashSaleBox />
-                    <View style={{height: 150, backgroundColor: '#FFF', marginTop: 7}}>
-                        <View style={{flexDirection: 'row'}}>
-                            <TextDefault style={[Styles.titleBox, {flex: 1}]}>SẢN PHẨM PHỔ BIẾN</TextDefault>
-                            <TextDefault style={Styles.viewMore}>Xem thêm</TextDefault>
-                        </View>
-                        <FlatList 
-                            style={{padding: 2.5}}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            data={[{key: 1}, {key: 2}, {key: 3}, {key: 4}, {key: 5}, {key: 6}, {key: 7}]}
-                            renderItem={() => <View style={{backgroundColor: 'red', width: 90, height: 110, margin: 2.5}}/>}
-                        />
-                    </View>
+                    <FlashSaleBox/>
+                    <TopProductBox/>
                     <CategoryBox/>
                     <ProductBox title="MUA GÌ HÔM NAY"/>
                 </ScrollView>

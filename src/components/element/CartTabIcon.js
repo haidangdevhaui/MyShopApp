@@ -20,7 +20,7 @@ class CartTabIcon extends Component {
                 top: 1,
                 right: 40,
                 borderRadius: 50,
-                backgroundColor: 'red',
+                backgroundColor: '#FB5526',
                 zIndex: 2}}>
                 <Text style={{color: '#FFF', fontSize: 11, paddingLeft: 3, paddingRight: 3}}>{notifications.length}</Text>
             </View>

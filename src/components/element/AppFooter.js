@@ -30,21 +30,21 @@ class AppFooter extends Component {
             <Footer>
                 <FooterTab style={{ backgroundColor: Color.main }}>
                     <Button vertical onPress={() => this.navigate('Shop')}>
-                        <Icon name="ios-home-outline" style={{ color: this.state.isShop ? 'red' : '#000' }}/>
-                        <Text style={{ color: this.state.isShop ? 'red' : '#000' }}>Home</Text>
+                        <Icon name="ios-home-outline" style={{ color: this.state.isShop ? '#FB5526' : '#000' }}/>
+                        <Text style={{ color: this.state.isShop ? '#FB5526' : '#000' }}>Home</Text>
                     </Button>
                     <Button badge vertical onPress={() => this.navigate('Cart')}>
                         <Badge><Text>{this.props.cart.length}</Text></Badge>
-                        <Icon name="ios-cart-outline" style={{ color: this.state.isCart ? 'red' : '#000' }}/>
-                        <Text style={{ color: this.state.isCart ? 'red' : '#000' }}>Giỏ hàng</Text>
+                        <Icon name="ios-cart-outline" style={{ color: this.state.isCart ? '#FB5526' : '#000' }}/>
+                        <Text style={{ color: this.state.isCart ? '#FB5526' : '#000' }}>Giỏ hàng</Text>
                     </Button>
                     <Button vertical onPress={() => this.navigate('Favorite')}>
-                        <Icon active name="ios-star-outline" style={{ color: this.state.isFavorite ? 'red' : '#000' }}/>
-                        <Text style={{ color: this.state.isFavorite ? 'red' : '#000' }}>Yêu thích</Text>
+                        <Icon active name="ios-star-outline" style={{ color: this.state.isFavorite ? '#FB5526' : '#000' }}/>
+                        <Text style={{ color: this.state.isFavorite ? '#FB5526' : '#000' }}>Yêu thích</Text>
                     </Button>
                     <Button vertical onPress={() => this.navigate('Profile')}>
-                        <Icon name="ios-person-outline" style={{ color: this.state.isProfile ? 'red' : '#000' }}/>
-                        <Text style={{ color: this.state.isProfile ? 'red' : '#000' }}>Tôi</Text>
+                        <Icon name="ios-person-outline" style={{ color: this.state.isProfile ? '#FB5526' : '#000' }}/>
+                        <Text style={{ color: this.state.isProfile ? '#FB5526' : '#000' }}>Tôi</Text>
                     </Button>
                 </FooterTab>
             </Footer>

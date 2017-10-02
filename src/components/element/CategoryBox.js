@@ -9,46 +9,14 @@ export default class CategoryBox extends Component {
         super(props)
         this.state = {
             categories: [
-                {
-                    id: 1,
-                    name: 'Thời trang',
-                    image: '../../../assets/images/ao.jpg'
-                },
-                {
-                    id: 2,
-                    name: 'Xe máy',
-                    image: '../../../assets/images/bike.jpg'
-                },
-                {
-                    id: 3,
-                    name: 'Đồng hồ',
-                    image: '../../../assets/images/dongho.jpg'
-                },
-                {
-                    id: 4,
-                    name: 'Máy tính',
-                    image: '../../../assets/images/imac.jpg'
-                },
-                {
-                    id: 5,
-                    name: 'Phụ kiện',
-                    image: '../../../assets/images/loa.jpg'
-                },
-                {
-                    id: 6,
-                    name: 'Máy ảnh',
-                    image: '../../../assets/images/mayanh.jpeg'
-                },
-                {
-                    id: 7,
-                    name: 'Điện thoại',
-                    image: '../../../assets/images/phone.jpg'
-                },
-                {
-                    id: 8,
-                    name: 'Đồ chơi',
-                    image: '../../../assets/images/toy.jpg'
-                },
+                { id: 1, name: 'Thời trang', image: 'http://res.cloudinary.com/dg6jnduzv/image/upload/c_pad,h_60,w_90/v1506566292/myshop/category/ao.jpg' },
+                { id: 2, name: 'Xe máy', image: 'http://res.cloudinary.com/dg6jnduzv/image/upload/c_pad,h_60,w_90/v1506566292/myshop/category/bike.jpg' },
+                { id: 3, name: 'Máy tính', image: 'http://res.cloudinary.com/dg6jnduzv/image/upload/c_pad,h_60,w_90/v1506566292/myshop/category/imac.jpg' },
+                { id: 4, name: 'Phụ kiện', image: 'http://res.cloudinary.com/dg6jnduzv/image/upload/c_pad,h_60,w_90/v1506566292/myshop/category/loa.jpg' },
+                { id: 5, name: 'Máy ảnh', image: 'http://res.cloudinary.com/dg6jnduzv/image/upload/c_pad,h_60,w_90/v1506566292/myshop/category/mayanh.jpg' },
+                { id: 6, name: 'Điện thoại', image: 'http://res.cloudinary.com/dg6jnduzv/image/upload/c_pad,h_60,w_90/v1506566292/myshop/category/phone.jpg' },
+                { id: 7, name: 'Đồ chơi', image: 'http://res.cloudinary.com/dg6jnduzv/image/upload/c_pad,h_60,w_90/v1506566292/myshop/category/toy.jpg' },
+                { id: 8, name: 'Đồng hồ', image: 'http://res.cloudinary.com/dg6jnduzv/image/upload/c_pad,h_60,w_90/v1506566292/myshop/category/dongho.jpg' }
             ]
         }
     }

@@ -18,11 +18,11 @@ export default class SliderBox extends Component {
     render() {
         let data = this.state.sliders.map((item) => 
             <View key={item.key}>
-                <Image style={{flex: 1, width: null, height: null}} resizeMode='cover' source={require('../../../assets/images/slider1.png')}/>
+                <Image style={{flex: 1, width: null, height: null}} resizeMode='cover' source={{uri: 'http://res.cloudinary.com/dg6jnduzv/image/upload/v1506910841/myshop/sliders/slider1.png'}}/>
             </View>
         );
         return (
-            <View style={{ height: 100, backgroundColor: 'red'}}>
+            <View style={{ height: 100, backgroundColor: '#FB5526'}}>
                 <IndicatorViewPager
                     style={{height:100}}
                     indicator={this._renderDotIndicator()}
